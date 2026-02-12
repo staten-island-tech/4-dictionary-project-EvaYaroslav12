@@ -26,23 +26,23 @@ products = [
 ]
 cart = []
 total = 0
-
+a = [p['callname'] for p in products]
 listy = {'name','price', 'department', 'description'}
-
 I = 5
 while I == 5:
-    item = input('what item would you like to browse? [samsung tv, sony headphones, lg tv, cart] ')
-    if item in products['callname']:
+    print ('items available: ',a, 'or cart')
+    item = input('what item would you like to browse? ' )
+    if item in a:
         info = input('is there something you would like to know? [price, department, description] ')
         if info in listy:
-            print (products[item]['name'],'-', products[item][info])
+            print(products[a.index(item)]['name'], '-', products[a.index(item)][info])
             imfo = input('Is there anything else you would like to know? ')
             if imfo in listy:
-                print (products[item]['name'],'-', products[item][imfo])
+                print(products[a.index(item)]['name'], '-', products[a.index(item)][imfo])
         purchase = input('would you like to purchase this item? ')
         if purchase == 'yes':
             cart.append(item)
-            total = total + (products[item]['price'])
+            total = total + (products[a.index(item)]['price'])
             print ('item added to cart')
         
     elif item == 'cart':
