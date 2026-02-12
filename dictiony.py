@@ -1,30 +1,29 @@
 
 
 
-Samsung_TV = {
+products = [
+    {
+    "callname" : 'samsung tv',
     "name": "Samsung 55\" 4K UHD TV",
     "price": 429.99,
     "department": "Televisions",
     "description": "55-inch Ultra HD Smart TV with HDR and built-in streaming apps."
-}
-LGTV = {
+    },
+    {
+    'callname' : 'lg tv',
     'name': "LG 65\" OLED TV",
     "price": 996.99,
     "department": 'Televisions',
     'description': 'Its a tv bro'
-}
-Sony_Headphones = {
+    },
+    {
+    'callname' : 'sony headphones',
     "name": "Sony Noise-Canceling headphones",
     "price": 119.99,
     "department": "Headphones",
     "description": "its headphones I dont know what u want."
-}
-
-products = {
-    'samsung tv' : Samsung_TV,
-    'sony headphones': Sony_Headphones,
-    'lg tv': LGTV
-}
+    }
+]
 cart = []
 total = 0
 
@@ -33,7 +32,7 @@ listy = {'name','price', 'department', 'description'}
 I = 5
 while I == 5:
     item = input('what item would you like to browse? [samsung tv, sony headphones, lg tv, cart] ')
-    if item in products:
+    if item in products['callname']:
         info = input('is there something you would like to know? [price, department, description] ')
         if info in listy:
             print (products[item]['name'],'-', products[item][info])
